@@ -1,0 +1,15 @@
+{
+	"gitflow": {
+		"branches": {
+			"developBranchName": "develop",
+			"masterBranchName": "master"
+		},
+		"release": {
+			"branchPrefix": "release/"
+		},
+		"version": {
+			"tagPrefix": ""
+		},
+		"packages": ["bower.json", "package.json"]
+	}
+}
