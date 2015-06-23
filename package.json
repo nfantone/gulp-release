@@ -20,12 +20,12 @@
 		"gulp-cli": "gulpjs/gulp-cli#4.0",
 		"gulp-git": "^1.2.4",
 		"gulp-load-plugins": "^1.0.0-rc.1",
-		"gulp-print": "^1.1.0",
 		"gulp-util": "^3.0.5",
 		"minimist": "^1.1.1",
 		"path": "^0.11.14",
 		"semver": "^4.3.6",
 		"undertaker-registry": "0.0.3",
-		"util": "^0.10.3"
+		"util": "^0.10.3",
+		"lodash": "^3.9.3"
 	}
 }
