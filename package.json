@@ -26,6 +26,7 @@
 		"semver": "^4.3.6",
 		"undertaker-registry": "0.0.3",
 		"util": "^0.10.3",
-		"lodash": "^3.9.3"
+		"lodash": "^3.9.3",
+		"glob": "^5.0.10"
 	}
 }
