@@ -13,7 +13,7 @@
 	},
 	"author": "Nicolás Fantone <nfantone@gmail.com> (https://github.com/nfantone)",
 	"license": "ISC",
-	"devDependencies": {
+	"dependencies": {
 		"fs-sync": "^0.2.5",
 		"gulp": "gulpjs/gulp#4.0",
 		"gulp-bump": "^0.3.1",
