@@ -1,30 +1,31 @@
 {
-  "name": "gulp-gitflow",
-  "version": "0.0.1-dev",
-  "description": "Module that enables support for git-flow style releases via gulp 4.0+",
-  "main": "index.js",
-  "scripts": {
-    "test": "gulp test"
-  },
-  "repository": {
-	  "type": "git",
-	  "url": "http://coderepo.contenta/nfantone/gulp-gitflow.git"
-  },
-  "author": "Nicolás Fantone <nfantone@gmail.com> (https://github.com/nfantone)",
-  "license": "ISC",
-  "devDependencies": {
-    "fs-sync": "^0.2.5",
-    "gulp": "gulpjs/gulp#4.0",
-    "gulp-bump": "^0.3.1",
-    "gulp-cli": "gulpjs/gulp-cli#4.0",
-    "gulp-git": "^1.2.4",
-    "gulp-load-plugins": "^1.0.0-rc.1",
-    "gulp-print": "^1.1.0",
-    "gulp-util": "^3.0.5",
-    "minimist": "^1.1.1",
-    "path": "^0.11.14",
-    "semver": "^4.3.6",
-    "undertaker-registry": "0.0.3",
-    "util": "^0.10.3"
-  }
+	"name": "gulp-gitflow",
+	"version": "0.0.1-dev",
+	"description": "Module that enables support for git-flow style releases via gulp 4.0+",
+	"main": "index.js",
+	"scripts": {
+		"test": "gulp test"
+	},
+	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "http://coderepo.contenta/nfantone/gulp-gitflow.git"
+	},
+	"author": "Nicolás Fantone <nfantone@gmail.com> (https://github.com/nfantone)",
+	"license": "ISC",
+	"devDependencies": {
+		"fs-sync": "^0.2.5",
+		"gulp": "gulpjs/gulp#4.0",
+		"gulp-bump": "^0.3.1",
+		"gulp-cli": "gulpjs/gulp-cli#4.0",
+		"gulp-git": "^1.2.4",
+		"gulp-load-plugins": "^1.0.0-rc.1",
+		"gulp-print": "^1.1.0",
+		"gulp-util": "^3.0.5",
+		"minimist": "^1.1.1",
+		"path": "^0.11.14",
+		"semver": "^4.3.6",
+		"undertaker-registry": "0.0.3",
+		"util": "^0.10.3"
+	}
 }
