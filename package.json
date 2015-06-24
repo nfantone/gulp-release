@@ -11,8 +11,14 @@
 		"type": "git",
 		"url": "http://coderepo.contenta/nfantone/gulp-gitflow.git"
 	},
+	"tags": [
+		"build",
+		"git",
+		"nvie",
+		"workflow"
+	],
 	"author": "Nicolás Fantone <nfantone@gmail.com> (https://github.com/nfantone)",
-	"license": "ISC",
+	"license": "MIT",
 	"dependencies": {
 		"fs-sync": "^0.2.5",
 		"gulp": "gulpjs/gulp#4.0",
