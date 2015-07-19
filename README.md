@@ -123,7 +123,7 @@ Version numbering follows [semver](http://semver.org/) specifications.
 gulp release-start [-v --version] [-t --type]
 ```
 
-* Next release version defaults to _MINOR_ increment.
+* Next release version defaults to _PATCH_ increment.
 * `-t` or `--type` can be used to indicate other types of increment (_MAJOR_ or _PATCH_).
 * `-v` or `--version` can be used to indicate a specific next version (such as `3.2.2.4-beta`)
 * If your current version ends with a suffix, next default version will be that same number without the suffix 
@@ -135,8 +135,8 @@ gulp release-start [-v --version] [-t --type]
 
 ### `release-finish`
 
-Releases the project. Merges the release branch, updates package files to new development version and tags the
-`master` branch. Pushes newly created tag and `master` to `origin`. Deletes the release branch afterwards.
+Releases the project. Merges the release branch, updates package files to new development version (suffixed with `-dev`)
+and tags the `master` branch. Pushes newly created tag and `master` to `origin`. Deletes the release branch afterwards.
 
 ```bash
 gulp release-finish

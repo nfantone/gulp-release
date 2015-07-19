@@ -15,14 +15,16 @@ var GitflowRegistry = (function () {
 
 	GitflowRegistry.prototype.init = function init(taker) {
 		var gitflow = new Gitflow(this.options);
-
-		var recipes = {release: {}};
-		recipes.bump = gitflow.bump;
-		recipes.release.start = taker.series(gitflow.bump, gitflow.branch, gitflow.commit);
-
-		recipes.release.finish = taker.series(gitflow.merge, gitflow.tag, gitflow.merge,
-			gitflow.bumpdev, gitflow.commit, gitflow.clean, gitflow.push);
-		taker.task('bump', recipes.bump);
+		var recipes = {
+			release: {
+				start: taker.series(gitflow.release.start.bump, gitflow.release.start.branch,
+					gitflow.release.start.commit),
+				finish: taker.series(gitflow.release.finish.merge, gitflow.release.finish.tag,
+					gitflow.release.finish.merge, gitflow.release.finish.bumpdev,
+					gitflow.release.finish.commit, gitflow.release.finish.clean, gitflow.release.finish.push)
+			}
+		};
+		taker.task('bump', gitflow.bump);
 		taker.task('release-start', recipes.release.start);
 		taker.task('release-finish', recipes.release.finish);
 	};
