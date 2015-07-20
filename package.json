@@ -1,6 +1,6 @@
 {
 	"name": "gulp-gitflow",
-	"version": "0.0.1-dev",
+	"version": "0.0.1",
 	"description": "Module that enables support for git-flow style releases via gulp 4.0+",
 	"main": "index.js",
 	"scripts": {
@@ -9,7 +9,7 @@
 	"private": true,
 	"repository": {
 		"type": "git",
-		"url": "http://coderepo.contenta/nfantone/gulp-gitflow.git"
+		"url": "http://github.com/nfantone/gulp-gitflow.git"
 	},
 	"tags": [
 		"build",
