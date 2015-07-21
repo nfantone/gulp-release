@@ -4,7 +4,7 @@ var util = require('util');
 var Gitflow = require('./lib/gitflow');
 var DefaultRegistry = require('undertaker-registry');
 
-var GitflowRegistry = (function () {
+var gitflowRegistry = (function () {
 
 	function GitflowRegistry(options) {
 		this.options = options;
@@ -32,4 +32,4 @@ var GitflowRegistry = (function () {
 	return GitflowRegistry;
 })();
 
-module.exports = GitflowRegistry;
+module.exports = gitflowRegistry;
