@@ -1,37 +1,53 @@
 {
-	"name": "gulp-gitflow",
-	"version": "0.0.1",
-	"description": "Module that enables support for git-flow style releases via gulp 4.0+",
-	"main": "index.js",
-	"scripts": {
-		"test": "gulp test"
-	},
-	"private": true,
-	"repository": {
-		"type": "git",
-		"url": "http://github.com/nfantone/gulp-gitflow.git"
-	},
-	"tags": [
-		"build",
-		"git",
-		"nvie",
-		"workflow"
-	],
-	"author": "Nicolás Fantone <nfantone@gmail.com> (https://github.com/nfantone)",
-	"license": "MIT",
-	"dependencies": {
-		"fs-sync": "^0.2.5",
-		"gulp": "gulpjs/gulp#4.0",
-		"gulp-bump": "^0.3.1",
-		"gulp-cli": "gulpjs/gulp-cli#4.0",
-		"gulp-git": "^1.2.4",
-		"gulp-util": "^3.0.6",
-		"minimist": "^1.1.1",
-		"path": "^0.11.14",
-		"semver": "^5.0.0",
-		"undertaker-registry": "0.0.3",
-		"util": "^0.10.3",
-		"lodash": "^3.10.0",
-		"glob": "^5.0.13"
-	}
+  "name": "gulp-release",
+  "version": "1.0.0",
+  "description": "Module that enables support for git-flow style releases via gulp",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test",
+    "validate": "gulp validate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/nfantone/gulp-release.git"
+  },
+  "tags": [
+    "build",
+    "git",
+    "nvie",
+    "workflow",
+    "release",
+    "gitflow",
+    "gulp"
+  ],
+  "author": "Nicolás Fantone <nfantone@gmail.com> (https://github.com/nfantone)",
+  "license": "MIT",
+  "dependencies": {
+    "fs-sync": "^1.0.2",
+    "gulp": "^3.9.1",
+    "gulp-bump": "^2.1.0",
+    "gulp-codename": "^0.1.1",
+    "gulp-git": "^1.7.1",
+    "gulp-sequence": "^0.4.5",
+    "gulp-shell": "^0.5.2",
+    "gulp-util": "^3.0.7",
+    "lodash": "^4.8.2",
+    "semver": "^5.1.0",
+    "yargs": "^4.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^2.7.0",
+    "eslint-config-semistandard": "^6.0.1",
+    "eslint-config-standard": "^5.1.0",
+    "eslint-plugin-promise": "^1.1.0",
+    "eslint-plugin-react": "^4.2.3",
+    "eslint-plugin-standard": "^1.3.2",
+    "gulp-eslint": "^2.0.0",
+    "pre-commit": "^1.1.2",
+    "gulp-release": "."
+  },
+  "pre-commit": [
+    "validate"
+  ],
+  "codename": "Platinum Uninorth"
 }

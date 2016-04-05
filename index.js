@@ -1,35 +1,68 @@
 'use strict';
+/**
+ *
+ * @module gulp-gitflow
+ * @class GitflowRegistry
+ */
+const argv = require('yargs')
+  .alias('p', 'push')
+  .argv;
+const _ = require('lodash');
+const semver = require('semver');
+const sequence = require('gulp-sequence');
+const util = require('gulp-util');
+const GitflowRelease = require('./lib/release');
 
-var util = require('util');
-var Gitflow = require('./lib/gitflow');
-var DefaultRegistry = require('undertaker-registry');
+const DEFAULTS = {
+  tasks: {
+    release: 'release'
+  },
+  messages: {
+    bump: 'Bump release version',
+    next: 'Set next development version'
+  }
+};
 
-var GitflowRegistry = (function () {
+class GitflowRegistry {
+  constructor(options) {
+    this.options = _.defaults({}, options, DEFAULTS);
+  }
 
-	function GitflowRegistry(options) {
-		this.options = options;
-		DefaultRegistry.call(this);
-	}
+  init(taker) {
+    let release = new GitflowRelease(this.options);
 
-	util.inherits(GitflowRegistry, DefaultRegistry);
+    taker.task('release:start', (done) => release.start(done));
+    taker.task('release:finish', (done) => release.finish(done));
+    taker.task('release:push', release.push);
+    taker.task('release:commit', () => release.commit(this.options.messages.bump));
+    taker.task('release:commit:next', () => release.commit(this.options.messages.next));
+    taker.task('bump:next', () => {
+      let ver = semver.inc(release.version(), 'patch');
+      return release.bump(ver + '-dev');
+    });
+    taker.task('bump', () => {
+      let ver = semver.inc(release.version(), 'patch');
+      return release.bump(ver);
+    });
 
-	GitflowRegistry.prototype.init = function init(taker) {
-		var gitflow = new Gitflow(this.options);
-		var recipes = {
-			release: {
-				start: taker.series(gitflow.release.start.bump, gitflow.release.start.branch,
-					gitflow.release.start.commit),
-				finish: taker.series(gitflow.release.finish.merge, gitflow.release.finish.tag,
-					gitflow.release.finish.merge, gitflow.release.finish.bumpdev,
-					gitflow.release.finish.commit, gitflow.release.finish.clean, gitflow.release.finish.push)
-			}
-		};
-		taker.task('bump', gitflow.bump);
-		taker.task('release-start', recipes.release.start);
-		taker.task('release-finish', recipes.release.finish);
-	};
+    let recipes = {
+      release: sequence('release:start',
+        'bump',
+        'release:commit',
+        'release:finish',
+        'bump:next',
+        'release:commit:next',
+        argv.p ? 'release:push' :
+        () => util.log(util.colors.cyan('[gulp-release]') + ' All done: review changes and push tag'))
+    };
 
-	return GitflowRegistry;
-})();
+    taker.task(this.options.tasks.release, recipes.release);
+  }
+}
 
-module.exports = GitflowRegistry;
+module.exports = {
+  register: function(taker, options) {
+    var registry = new GitflowRegistry(options);
+    registry.init(taker);
+  }
+};
