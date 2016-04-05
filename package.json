@@ -4,7 +4,8 @@
   "description": "Module that enables support for git-flow style releases via gulp",
   "main": "index.js",
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp test",
+    "validate": "gulp validate"
   },
   "private": true,
   "repository": {

@@ -1,9 +1,9 @@
-'use strict'; // eslint-disable-line strict
+'use strict';
 
-var gulp = require('gulp');
-var eslint = require('gulp-eslint');
+const gulp = require('gulp');
+const eslint = require('gulp-eslint');
 
-var paths = {
+const paths = {
   src: ['index.js', 'lib/**/*.js']
 };
 
@@ -14,8 +14,10 @@ gulp.task('eslint', function() {
     .pipe(eslint.failOnError());
 });
 
+gulp.task('validate', ['eslint']);
+
 gulp.task('watch', function() {
-  gulp.watch(paths.src, gulp.series('eslint'));
+  gulp.watch(paths.src, ['eslint']);
 });
 
-gulp.task('default', gulp.series('watch'));
+gulp.task('default', ['watch']);
