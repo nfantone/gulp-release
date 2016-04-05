@@ -5,6 +5,9 @@
  * @class GitflowRegistry
  */
 const argv = require('yargs')
+  .alias('v', 'version')
+  .alias('t', 'type')
+  .default('t', 'patch')
   .alias('p', 'push')
   .argv;
 const _ = require('lodash');
@@ -37,7 +40,7 @@ class GitflowRegistry {
     taker.task('release:commit', () => release.commit(this.options.messages.bump));
     taker.task('release:commit:next', () => release.commit(this.options.messages.next));
     taker.task('bump:next', () => {
-      let ver = semver.inc(release.version(), 'patch');
+      let ver = semver.inc(argv.version || release.version(), argv.type);
       return release.bump(ver + '-dev');
     });
     taker.task('bump', () => {
@@ -53,7 +56,7 @@ class GitflowRegistry {
         'bump:next',
         'release:commit:next',
         argv.p ? 'release:push' :
-        () => util.log(util.colors.cyan('[gulp-release]') + ' All done: review changes and push tag'))
+        () => util.log(util.colors.cyan('[gulp-release]') + ' All done: review changes and push to origin'))
     };
 
     taker.task(this.options.tasks.release, recipes.release);
