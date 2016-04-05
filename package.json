@@ -1,5 +1,5 @@
 {
-  "name": "gulp-gitflow",
+  "name": "gulp-release",
   "version": "1.0.0-dev",
   "description": "Module that enables support for git-flow style releases via gulp",
   "main": "index.js",
@@ -7,10 +7,9 @@
     "test": "gulp test",
     "validate": "gulp validate"
   },
-  "private": true,
   "repository": {
     "type": "git",
-    "url": "http://github.com/nfantone/gulp-gitflow.git"
+    "url": "http://github.com/nfantone/gulp-release.git"
   },
   "tags": [
     "build",
@@ -18,7 +17,8 @@
     "nvie",
     "workflow",
     "release",
-    "gitflow"
+    "gitflow",
+    "gulp"
   ],
   "author": "Nicolás Fantone <nfantone@gmail.com> (https://github.com/nfantone)",
   "license": "MIT",
@@ -27,23 +27,24 @@
     "gulp": "^3.9.1",
     "gulp-bump": "^2.1.0",
     "gulp-codename": "^0.1.1",
-    "gulp-git": "^1.7.0",
+    "gulp-git": "^1.7.1",
     "gulp-sequence": "^0.4.5",
     "gulp-shell": "^0.5.2",
     "gulp-util": "^3.0.7",
-    "lodash": "^4.7.0",
+    "lodash": "^4.8.2",
     "semver": "^5.1.0",
-    "yargs": "^4.3.2"
+    "yargs": "^4.4.0"
   },
   "devDependencies": {
-    "eslint": "^2.6.0",
+    "eslint": "^2.7.0",
     "eslint-config-semistandard": "^6.0.1",
     "eslint-config-standard": "^5.1.0",
     "eslint-plugin-promise": "^1.1.0",
     "eslint-plugin-react": "^4.2.3",
     "eslint-plugin-standard": "^1.3.2",
     "gulp-eslint": "^2.0.0",
-    "pre-commit": "^1.1.2"
+    "pre-commit": "^1.1.2",
+    "gulp-release": "."
   },
   "pre-commit": [
     "validate"
