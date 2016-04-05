@@ -1,5 +1,7 @@
-# gulp-release
+# <img src="https://www.dropbox.com/s/tbm0ulwypyfcppi/gulp-gitflow.png?raw=1" width="70" height="70"> gulp-release
 A [GulpJS](https://github.com/gulpjs) plugin that enables support for git-flow style releases. It requires the [gitflow command line tool](https://github.com/petervanderdoes/gitflow-avh) to be installed on your system.
+
+[![js-semistandard-style](https://cdn.rawgit.com/flet/semistandard/master/badge.svg)](https://github.com/Flet/semistandard)
 
 ## Gitflow
 A proposed workflow revolving around the use of git as a central tool. Defines a branching model to follow using best practices and convenience directives.
