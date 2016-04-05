@@ -1,6 +1,6 @@
 {
   "name": "gulp-release",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Module that enables support for git-flow style releases via gulp",
   "main": "index.js",
   "scripts": {
