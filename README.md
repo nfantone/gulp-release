@@ -1,4 +1,4 @@
-# <img src="https://www.dropbox.com/s/tbm0ulwypyfcppi/gulp-gitflow.png?raw=1" width="70" height="70"> gulp-release
+# <img src="https://www.dropbox.com/s/tbm0ulwypyfcppi/gulp-gitflow.png?raw=1" width="80" height="80"> gulp-release
 A [GulpJS](https://github.com/gulpjs) plugin that enables support for git-flow style releases. It requires the [gitflow command line tool](https://github.com/petervanderdoes/gitflow-avh) to be installed on your system.
 
 [![js-semistandard-style](https://cdn.rawgit.com/flet/semistandard/master/badge.svg)](https://github.com/Flet/semistandard)
@@ -6,11 +6,10 @@ A [GulpJS](https://github.com/gulpjs) plugin that enables support for git-flow s
 ## Gitflow
 A proposed workflow revolving around the use of git as a central tool. Defines a branching model to follow using best practices and convenience directives.
 - See the [original concept](http://nvie.com/posts/a-successful-git-branching-model/) at nvie.com.
-- Read the [derivations](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) forged by the
-- people at Atlassian.
+- Read the [derivations](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) forged by the people at Atlassian.
 
 ## Installation
-`gulp-release` is a **Gulp plugin**. It defines custom tasks that group common flow-related behaviors when releasing software.
+`gulp-release` is a **GulpJS plugin**. It defines custom tasks that group common flow-related behaviors when releasing software using git.
 
 ```bash
 npm i --save-dev gulp-release
@@ -110,7 +109,7 @@ This recipe will perform the following actions, sequentially:
 6. Commit changes from last step to `develop` using `"Set next development version"` as message (configurable).
 7. If the `-p` (or `--push`) flag was set, push all tags and local branches to `origin`.
 
-> See the [git flow release](https://github.com/petervanderdoes/gitflow-avh/wiki/Reference:-git-flow-release#reference----git-flow-release) wiki for details on what's happening under the hood when calling `git flow release start|finish`.
+> See the [git flow release wiki](https://github.com/petervanderdoes/gitflow-avh/wiki/Reference:-git-flow-release#reference----git-flow-release) for details on what's happening under the hood when calling `git flow release start|finish`.
 
 ## License
 MIT
