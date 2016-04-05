@@ -4,9 +4,13 @@
  * @module gulp-gitflow
  * @class GitflowRegistry
  */
+const argv = require('yargs')
+  .alias('p', 'push')
+  .argv;
 const _ = require('lodash');
 const semver = require('semver');
 const sequence = require('gulp-sequence');
+const util = require('gulp-util');
 const GitflowRelease = require('./lib/release');
 
 const DEFAULTS = {
@@ -27,18 +31,14 @@ class GitflowRegistry {
   init(taker) {
     let release = new GitflowRelease(this.options);
 
-    taker.task('release:start', _.bind(release.start, release));
-    taker.task('release:finish', _.bind(release.finish, release));
-    taker.task('release:push', _.bind(release.push, release));
-    taker.task('release:commit', () => {
-      return release.commit(this.options.messages.bump);
-    });
-    taker.task('release:commit:next', () => {
-      return release.commit(this.options.messages.next);
-    });
+    taker.task('release:start', (done) => release.start(done));
+    taker.task('release:finish', (done) => release.finish(done));
+    taker.task('release:push', release.push);
+    taker.task('release:commit', () => release.commit(this.options.messages.bump));
+    taker.task('release:commit:next', () => release.commit(this.options.messages.next));
     taker.task('bump:next', () => {
       let ver = semver.inc(release.version(), 'patch');
-      release.bump(ver + '-dev');
+      return release.bump(ver + '-dev');
     });
     taker.task('bump', () => {
       let ver = semver.inc(release.version(), 'patch');
@@ -52,7 +52,8 @@ class GitflowRegistry {
         'release:finish',
         'bump:next',
         'release:commit:next',
-        'release:push')
+        argv.p ? 'release:push' :
+        () => util.log(util.colors.cyan('[gulp-release]') + ' All done: review changes and push tag'))
     };
 
     taker.task(this.options.tasks.release, recipes.release);

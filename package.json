@@ -16,13 +16,13 @@
     "git",
     "nvie",
     "workflow",
-    "release"
+    "release",
+    "gitflow"
   ],
   "author": "Nicolás Fantone <nfantone@gmail.com> (https://github.com/nfantone)",
   "license": "MIT",
   "dependencies": {
     "fs-sync": "^1.0.2",
-    "glob": "^7.0.3",
     "gulp": "^3.9.1",
     "gulp-bump": "^2.1.0",
     "gulp-codename": "^0.1.1",
@@ -31,7 +31,6 @@
     "gulp-shell": "^0.5.2",
     "gulp-util": "^3.0.7",
     "lodash": "^4.7.0",
-    "minimist": "^1.2.0",
     "semver": "^5.1.0",
     "yargs": "^4.3.2"
   },
@@ -40,6 +39,7 @@
     "eslint-config-semistandard": "^6.0.1",
     "eslint-config-standard": "^5.1.0",
     "eslint-plugin-promise": "^1.1.0",
+    "eslint-plugin-react": "^4.2.3",
     "eslint-plugin-standard": "^1.3.2",
     "gulp-eslint": "^2.0.0",
     "pre-commit": "^1.1.2"
