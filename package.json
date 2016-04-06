@@ -38,10 +38,10 @@
     "gulp-bump": "^2.1.0",
     "gulp-codename": "^0.1.1",
     "gulp-git": "^1.7.1",
-    "gulp-sequence": "^0.4.5",
     "gulp-shell": "^0.5.2",
     "gulp-util": "^3.0.7",
     "lodash": "^4.8.2",
+    "run-sequence": "^1.1.5",
     "semver": "^5.1.0",
     "yargs": "^4.4.0"
   },
