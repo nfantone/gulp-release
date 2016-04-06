@@ -1,15 +1,20 @@
 {
   "name": "gulp-release",
   "version": "1.0.2-dev",
+  "codename": "Platinum Uninorth",
   "description": "Module that enables support for git-flow style releases via gulp",
   "main": "index.js",
+  "author": "Nicolás Fantone <nfantone@gmail.com> (https://github.com/nfantone)",
   "scripts": {
     "test": "gulp test",
     "validate": "gulp validate"
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/nfantone/gulp-release.git"
+    "url": "https://github.com/nfantone/gulp-release.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nfantone/gulp-release/issues"
   },
   "tags": [
     "build",
@@ -20,8 +25,13 @@
     "gitflow",
     "gulp"
   ],
-  "author": "Nicolás Fantone <nfantone@gmail.com> (https://github.com/nfantone)",
-  "license": "MIT",
+  "files": [
+    "index.js",
+    "lib"
+  ],
+  "engines": {
+    "node": ">=4.0.0"
+  },
   "dependencies": {
     "fs-sync": "^1.0.2",
     "gulp": "^3.9.1",
@@ -49,5 +59,5 @@
   "pre-commit": [
     "validate"
   ],
-  "codename": "Platinum Uninorth"
+  "license": "MIT"
 }

@@ -1,6 +1,5 @@
 'use strict';
 /**
- *
  * @module gulp-gitflow
  * @class GitflowRegistry
  */
