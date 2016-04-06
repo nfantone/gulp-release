@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/nfantone/gulp-release/issues"
   },
-  "tags": [
+  "keywords": [
     "build",
     "git",
     "nvie",
