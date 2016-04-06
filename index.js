@@ -1,6 +1,5 @@
 'use strict';
 /**
- *
  * @module gulp-gitflow
  * @class GitflowRegistry
  */
@@ -12,7 +11,7 @@ const argv = require('yargs')
   .argv;
 const _ = require('lodash');
 const semver = require('semver');
-const sequence = require('gulp-sequence');
+const sequence = require('run-sequence');
 const util = require('gulp-util');
 const GitflowRelease = require('./lib/release');
 
@@ -49,14 +48,17 @@ class GitflowRegistry {
     });
 
     let recipes = {
-      release: sequence('release:start',
+      release: (cb) => sequence('release:start',
         'bump',
         'release:commit',
         'release:finish',
         'bump:next',
         'release:commit:next',
         argv.p ? 'release:push' :
-        () => util.log(util.colors.cyan('[gulp-release]') + ' All done: review changes and push to origin'))
+        () => {
+          util.log(util.colors.cyan('[gulp-release]') + ' All done: review changes and push to origin');
+          return cb();
+        })
     };
 
     taker.task(this.options.tasks.release, recipes.release);
