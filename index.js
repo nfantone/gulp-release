@@ -6,7 +6,7 @@
 const argv = require('yargs')
   .alias('v', 'version')
   .alias('t', 'type')
-  .default('t', 'patch')
+  .alias('m', 'message')
   .alias('p', 'push')
   .argv;
 const _ = require('lodash');
@@ -33,41 +33,49 @@ class GitflowRegistry {
   init(taker) {
     let release = new GitflowRelease(this.options);
 
-    taker.task('release:start', (done) => release.start(done));
-    taker.task('release:finish', (done) => release.finish(done));
+    taker.task('release:start', (done) => release.start(argv.version, argv.type, done));
+    taker.task('release:finish', (done) => release.finish(argv.message, done));
     taker.task('release:push', release.push);
     taker.task('release:commit', () => release.commit(this.options.messages.bump));
     taker.task('release:commit:next', () => release.commit(this.options.messages.next));
-    taker.task('bump:next', () => {
-      let ver = semver.inc(argv.version || release.version(), argv.type);
-      return release.bump(ver + '-dev');
-    });
     taker.task('bump', () => {
+      if (argv.version || argv.type) {
+        return release.bump(argv.version, argv.type, argv.message);
+      }
       let ver = semver.inc(release.version(), 'patch');
-      return release.bump(ver);
+      return release.bump(ver, null, argv.message);
+    });
+    taker.task('bump:next', () => {
+      let ver = semver.inc(release.version(), 'patch');
+      return release.bump(ver + '-dev', null, argv.message);
     });
 
+    function done(cb) {
+      return () => {
+        if (argv.p) {
+          util.log(util.colors.cyan('[gulp-release]') +
+            ' All done: tags and branches pushed to ' + util.colors.magenta('origin'));
+        } else {
+          util.log(util.colors.cyan('[gulp-release]') +
+            ' All done: review changes and push to ' + util.colors.magenta('origin'));
+        }
+        return cb();
+      };
+    }
+
     let recipes = {
-      release: (cb) => sequence('release:start',
+      release: _.compact([
+        'release:start',
         'bump',
         'release:commit',
         'release:finish',
         'bump:next',
         'release:commit:next',
-        argv.p ? 'release:push' : undefined,
-        () => {
-          if (argv.p) {
-            util.log(util.colors.cyan('[gulp-release]') +
-              ' All done: tags and branches pushed to ' + util.colors.magenta('origin'));
-          } else {
-            util.log(util.colors.cyan('[gulp-release]') +
-              ' All done: review changes and push to ' + util.colors.magenta('origin'));
-          }
-          return cb();
-        })
+        argv.p ? 'release:push' : undefined
+      ])
     };
 
-    taker.task(this.options.tasks.release, recipes.release);
+    taker.task(this.options.tasks.release, (cb) => _.spread(sequence)(recipes.release.concat(done(cb))));
   }
 }
 
