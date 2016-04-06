@@ -54,9 +54,15 @@ class GitflowRegistry {
         'release:finish',
         'bump:next',
         'release:commit:next',
-        argv.p ? 'release:push' :
+        argv.p ? 'release:push' : undefined,
         () => {
-          util.log(util.colors.cyan('[gulp-release]') + ' All done: review changes and push to origin');
+          if (argv.p) {
+            util.log(util.colors.cyan('[gulp-release]') +
+              ' All done: tags and branches pushed to ' + util.colors.magenta('origin'));
+          } else {
+            util.log(util.colors.cyan('[gulp-release]') +
+              ' All done: review changes and push to ' + util.colors.magenta('origin'));
+          }
           return cb();
         })
     };
