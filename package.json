@@ -38,6 +38,8 @@
     "gulp-bump": "^2.1.0",
     "gulp-codename": "^0.1.1",
     "gulp-git": "^1.7.1",
+    "gulp-if": "^2.0.0",
+    "gulp-json-transform": "^0.3.0",
     "gulp-shell": "^0.5.2",
     "gulp-util": "^3.0.7",
     "lodash": "^4.8.2",
