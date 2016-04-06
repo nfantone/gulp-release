@@ -1,6 +1,6 @@
 {
   "name": "gulp-release",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "codename": "Platinum Uninorth",
   "description": "Module that enables support for git-flow style releases via gulp",
   "main": "index.js",
@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/nfantone/gulp-release/issues"
   },
-  "tags": [
+  "keywords": [
     "build",
     "git",
     "nvie",
