@@ -47,7 +47,8 @@ class GitflowRegistry {
     });
     taker.task('bump:next', () => {
       let ver = semver.inc(release.version(), 'patch');
-      return release.bump(ver + '-dev', null, argv.message);
+      let devSuffix = this.options.devSuffix || '-dev';
+      return release.bump(ver + devSuffix, null, argv.message);
     });
 
     function done(cb) {
