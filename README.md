@@ -1,4 +1,6 @@
 # <img src="https://www.dropbox.com/s/tbm0ulwypyfcppi/gulp-gitflow.png?raw=1" width="80" height="80"> gulp-release
+[![Build Status](https://travis-ci.org/nfantone/gulp-release.svg?branch=develop)](https://travis-ci.org/nfantone/gulp-release)
+
 A [GulpJS](https://github.com/gulpjs) plugin that enables support for git-flow style releases. It requires the [gitflow command line tool](https://github.com/petervanderdoes/gitflow-avh) to be installed on your system.
 
 [![js-semistandard-style](https://cdn.rawgit.com/flet/semistandard/master/badge.svg)](https://github.com/Flet/semistandard)
