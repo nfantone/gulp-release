@@ -74,7 +74,8 @@ Declares tasks on the `gulpInst` gulp instance. `options` is an optional object 
        bump: 'Bump release version',
        next: 'Set next development version'
     },
-    packages: ['package.json'] // Supports glob syntax
+    packages: ['package.json'], // Supports glob syntax
+    devSuffix: '-dev' // This is the suffix added for development versions (If not specified, defaults to -dev)
 };
 ```
 
