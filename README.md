@@ -27,7 +27,7 @@ curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 # Install dependencies
 sudo apt-get install git-flow
 sudo apt-get install -y nodejs
-sudo npm update -g npms
+sudo npm update -g npm
 ```
 
 ## Usage
@@ -59,10 +59,10 @@ var release = require('gulp-release');
 release.register(gulp, { packages: ['package.json'] });
 ```
 
-Here, the `packages` property expects an array of _globs_ that match `json` files containing version information (i.e: `package.json`, `bower.json`, `component.json`).
+Here, the `packages` property expects an ordered array of _globs_ that match `json` files containing version information (i.e: `package.json`, `bower.json`, `component.json`). All version files will be updated on a release, but version number will be read _only_ from the first one.
 
 ## API
-### `register(gulpInst, options)`
+### `register(gulpInst[, options])`
 Declares tasks on the `gulpInst` gulp instance. `options` is an optional object that can be defined to override the following sensible defaults:
 
 ```javascript
@@ -74,7 +74,8 @@ Declares tasks on the `gulpInst` gulp instance. `options` is an optional object 
        bump: 'Bump release version',
        next: 'Set next development version'
     },
-    packages: ['package.json'] // Supports glob syntax
+    packages: ['package.json'], // Supports glob syntax
+    devSuffix: '-dev' // Suffix added on development versions (ie.: on `develop` branch)
 };
 ```
 
@@ -87,7 +88,7 @@ Performs a full, automatic project release. Uses `git flow release` internally. 
 > It's required that your version numbering follows [semver](http://semver.org/) specifications.
 
 ```bash
-gulp release [-v --version] [-t --type] [-p --push]
+gulp release [-v --version VERSION] [-t --type TYPE] [-p --push] [-m CODENAME]
 ```
 
 The repository you invoke this task on, must be `git flow` enabled. Run `git flow init` if you haven't already, before running `gulp release`. Otherwise, the task will fail.

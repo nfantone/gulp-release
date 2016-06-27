@@ -1,0 +1,22 @@
+language: node_js
+node_js:
+- '4'
+- '5'
+- '6'
+branches: 
+only:
+- master
+- develop
+notifications:
+  email:
+  - nfantone@gmail.com
+script: npm run validate
+deploy:
+  provider: npm
+  email: nfantone@gmail.com
+  api_key:
+    secure: pYDFtgza0ilBtdbvYoz6V2qL4uVQF55DVROuk3UkD7Hd8swwWEjoqd7LYPxPXs8b0VXHi0QvRfASVgiMTp0d4xjA5kiqnhg54DV8/L2nIa6ONSQ+9M15f3PRuBA1m2ySawLFXFLuA0ijsg7sh2GrXQsbygV2drbjUOli2qu9p7NHe9FufgnOEC7rX8vBmpX1OmdfsqMtY6tFdoJzN9EWfaqFAdKGFJHyQb1cjyXniwasp2qCPwXjxtZyanxY8uw54cYfHsuFyczRft8LJ/veP+qOQAO5ndgamxbkkp48g9pSDvpele7ibhk+89t2ne6UVRzDoGj/pFF9UZHk/qKU4QCuzoc7vrhUctvOb48x8BEkzJuJYg45/YOwWA6ys+9qmLUskBLcEPPQgwikURtUgTS6a5Fuuomr/Zq/rl9K6Ok+HVAfUsw77FTL4LncjOEP6oLuaYkPse+wkja5wsztTXHBeIiHkNj7iBWTX65xPJ1tpI8S693pbBpvORohLJGs+Gd8HVhZsCZbqyFG8r8878cE9rV+qxrTnKL+W+BrSwrsR23fSxSs+NpcOv4iC7VdtH+o7rr5PR/F4Sug38QfeM4j/k3dhifQRarn8FBvbSMy4plQRerZgf/YZnWIIgBH1gbEXJtX8QHMaeD18qCbHuGGDTapvyvnjEaGgROgQxs=
+  on:
+    tags: true
+    repo: nfantone/gulp-release
+    branch: develop

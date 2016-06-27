@@ -1,8 +1,8 @@
 {
   "name": "gulp-release",
-  "version": "1.0.5",
-  "codename": "Maniac Tentacle",
-  "description": "Module that enables support for git-flow style releases via gulp",
+  "version": "1.0.6",
+  "codename": "Chron-o-John",
+  "description": "Enable git-flow style releases via gulp",
   "main": "index.js",
   "author": "Nicolás Fantone <nfantone@gmail.com> (https://github.com/nfantone)",
   "scripts": {
@@ -19,6 +19,7 @@
   "keywords": [
     "build",
     "git",
+    "flow",
     "nvie",
     "workflow",
     "release",
@@ -35,27 +36,26 @@
   "dependencies": {
     "fs-sync": "^1.0.2",
     "gulp": "^3.9.1",
-    "gulp-bump": "^2.1.0",
+    "gulp-bump": "^2.2.0",
     "gulp-codename": "^0.1.1",
-    "gulp-git": "^1.7.1",
-    "gulp-if": "^2.0.0",
-    "gulp-json-transform": "^0.3.0",
+    "gulp-git": "^1.7.2",
+    "gulp-if": "^2.0.1",
+    "gulp-json-transform": "^0.3.2",
     "gulp-shell": "^0.5.2",
     "gulp-util": "^3.0.7",
-    "lodash": "^4.8.2",
-    "run-sequence": "^1.1.5",
-    "semver": "^5.1.0",
-    "yargs": "^4.4.0"
+    "lodash": "^4.13.1",
+    "run-sequence": "^1.2.1",
+    "semver": "^5.1.1",
+    "yargs": "^4.7.1"
   },
   "devDependencies": {
-    "eslint": "^2.7.0",
-    "eslint-config-semistandard": "^6.0.1",
-    "eslint-config-standard": "^5.1.0",
-    "eslint-plugin-promise": "^1.1.0",
-    "eslint-plugin-react": "^4.2.3",
+    "eslint": "^2.13.1",
+    "eslint-config-semistandard": "^6.0.2",
+    "eslint-config-standard": "^5.3.1",
+    "eslint-plugin-promise": "^1.3.2",
     "eslint-plugin-standard": "^1.3.2",
     "gulp-eslint": "^2.0.0",
-    "pre-commit": "^1.1.2",
+    "pre-commit": "^1.1.3",
     "gulp-release": "."
   },
   "pre-commit": [
