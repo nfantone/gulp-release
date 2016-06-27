@@ -1,6 +1,6 @@
 {
   "name": "gulp-release",
-  "version": "1.0.6",
+  "version": "1.0.7-dev",
   "codename": "Chron-o-John",
   "description": "Enable git-flow style releases via gulp",
   "main": "index.js",
