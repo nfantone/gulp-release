@@ -24,7 +24,12 @@
     "workflow",
     "release",
     "gitflow",
-    "gulp"
+    "gulp",
+    "plugin",
+    "semver",
+    "version",
+    "versioning",
+    "development"
   ],
   "files": [
     "index.js",
@@ -38,7 +43,7 @@
     "gulp": "^3.9.1",
     "gulp-bump": "^2.2.0",
     "gulp-codename": "^0.1.1",
-    "gulp-git": "^1.7.2",
+    "gulp-git": "^1.8.0",
     "gulp-if": "^2.0.1",
     "gulp-json-transform": "^0.3.2",
     "gulp-shell": "^0.5.2",
