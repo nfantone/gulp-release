@@ -1,6 +1,6 @@
 {
   "name": "gulp-release",
-  "version": "1.0.7",
+  "version": "1.0.8-dev",
   "codename": "Thimbleweed Park",
   "description": "Enable git-flow style releases via gulp",
   "main": "index.js",
