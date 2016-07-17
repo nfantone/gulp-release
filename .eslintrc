@@ -1,5 +1,8 @@
 {
-  "extends": "semistandard",
+  "extends": [
+    "semistandard",
+    "xo-space"
+  ],
   "env": {
     "mocha": true
   },
