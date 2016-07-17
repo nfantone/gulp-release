@@ -1,15 +1,19 @@
 language: node_js
 node_js:
-- '4'
 - '5'
 - '6'
 branches:
 only:
 - master
 - develop
+  - /^v?(\d\.){2}\d$/
 notifications:
   email:
   - nfantone@gmail.com
+cache:
+  bundler: true
+  directories:
+  - node_modules
 script: npm run validate
 deploy:
   provider: npm
@@ -19,4 +23,4 @@ deploy:
   on:
     tags: true
     repo: nfantone/gulp-release
-    node: '4'
+    node_js: '5'

@@ -1,7 +1,6 @@
 'use strict';
 /**
  * @module gulp-gitflow
- * @class GitflowRegistry
  */
 const argv = require('yargs')
   .alias('v', 'version')
