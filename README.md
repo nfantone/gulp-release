@@ -89,7 +89,7 @@ This parameters permits you to configure main task name, commit messages and `.j
 
 ## Tasks
 ### `release`
-Performs a full, automatic project release. Uses `git flow release` internally. Name is configurable. Should be run 
+Performs a full, automatic project release. Uses `git flow release` internally. Name is configurable.
 
 > It's required that your version numbering follows [semver](http://semver.org/) specifications.
 
@@ -114,6 +114,7 @@ This recipe will perform the following actions, sequentially (default option val
 5. Bump the version on all packages files to _next development iteration_ using a `-dev` suffix (like `1.0.1-dev`).
 6. Commit changes from last step to `develop` using `"Set next development version"` as message.
 7. If the `-p` (or `--push`) flag was set, push all tags and local `develop` and `master` branches to `origin`.
+
 
 > See the [git flow release wiki](https://github.com/petervanderdoes/gitflow-avh/wiki/Reference:-git-flow-release#reference----git-flow-release) for details on what's happening under the hood when calling `git flow release start|finish`.
 
