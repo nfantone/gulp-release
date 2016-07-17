@@ -1,5 +1,8 @@
 {
-  "extends": "semistandard",
+  "extends": [
+    "semistandard",
+    "xo-space"
+  ],
   "env": {
     "mocha": true
   },
@@ -8,6 +11,8 @@
     "no-unused-vars": [2, { "vars": "all", "args": "after-used" }],
     "space-before-function-paren": [2, "never"],
     "operator-linebreak": [2, "after"],
-    "require-yield": 2
+    "require-yield": 2,
+    "arrow-parens": [2, "always"],
+    "object-curly-spacing": ["error", "always"]
   }
 }
