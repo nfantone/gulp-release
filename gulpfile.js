@@ -11,17 +11,15 @@ const PATHS = {
 // Add `release` task
 release.register(gulp);
 
-gulp.task('eslint', function() {
-  return gulp.src(PATHS.src)
+gulp.task('eslint', () =>
+  gulp.src(PATHS.src)
     .pipe(eslint())
     .pipe(eslint.format())
-    .pipe(eslint.failOnError());
-});
+    .pipe(eslint.failOnError())
+);
 
 gulp.task('validate', ['eslint']);
 
-gulp.task('watch', function() {
-  gulp.watch(PATHS.src, ['eslint']);
-});
+gulp.task('watch', () => gulp.watch(PATHS.src, ['eslint']));
 
 gulp.task('default', ['watch']);
