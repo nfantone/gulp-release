@@ -1,7 +1,7 @@
 {
   "name": "gulp-release",
-  "version": "1.0.7-dev",
-  "codename": "Chron-o-John",
+  "version": "1.0.7",
+  "codename": "Thimbleweed Park",
   "description": "Enable git-flow style releases via gulp",
   "main": "index.js",
   "author": "Nicolás Fantone <nfantone@gmail.com> (https://github.com/nfantone)",
