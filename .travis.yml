@@ -7,13 +7,13 @@ only:
 - master
 - develop
 - /^v?(\d\.){2}\d$/
-notifications:
-  email:
-  - nfantone@gmail.com
 cache:
   bundler: true
   directories:
   - node_modules
+notifications:
+  email:
+  - nfantone@gmail.com
 script: npm run validate
 deploy:
   provider: npm
