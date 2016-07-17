@@ -15,7 +15,7 @@ gulp.task('eslint', () =>
   gulp.src(PATHS.src)
     .pipe(eslint())
     .pipe(eslint.format())
-    .pipe(eslint.failOnError())
+    .pipe(eslint.failAfterError())
 );
 
 gulp.task('validate', ['eslint']);
