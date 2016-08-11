@@ -7,7 +7,7 @@ const argv = require('yargs')
   .alias('t', 'type')
   .alias('m', 'message')
   .alias('p', 'push')
-  .alias('c', 'codenames')
+  .alias('c', 'codenames').normalize('c')
   .argv;
 const _ = require('lodash');
 const semver = require('semver');
@@ -15,6 +15,8 @@ const sequence = require('run-sequence');
 const util = require('gulp-util');
 const GitflowRelease = require('./lib/release');
 
+// Default config values if none are given
+// during plugin initialization
 const DEFAULTS = {
   tasks: {
     release: 'release'
