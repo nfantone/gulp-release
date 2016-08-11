@@ -7,6 +7,7 @@ const argv = require('yargs')
   .alias('t', 'type')
   .alias('m', 'message')
   .alias('p', 'push')
+  .alias('c', 'codenames')
   .argv;
 const _ = require('lodash');
 const semver = require('semver');
@@ -39,7 +40,7 @@ class GitflowRegistry {
     taker.task('release:commit:next', () => release.commit(this.options.messages.next));
     taker.task('bump', () => {
       if (argv.version || argv.type) {
-        return release.bump(argv.version, argv.type, argv.message);
+        return release.bump(argv.version, argv.type, argv.message, argv.codenames);
       }
       let ver = semver.inc(release.version(), 'patch');
       return release.bump(ver, null, argv.message);
@@ -47,7 +48,7 @@ class GitflowRegistry {
     taker.task('bump:next', () => {
       let ver = semver.inc(release.version(), 'patch');
       let devSuffix = this.options.devSuffix || '-dev';
-      return release.bump(ver + devSuffix, null, argv.message);
+      return release.bump(ver + devSuffix, null, argv.message, argv.codenames);
     });
 
     function done(cb) {
