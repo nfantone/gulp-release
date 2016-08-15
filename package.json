@@ -1,7 +1,7 @@
 {
   "name": "gulp-release",
-  "version": "1.0.8-dev",
-  "codename": "Thimbleweed Park",
+  "version": "1.1.0",
+  "codename": "Alien Mindbenders",
   "description": "Enable git-flow style releases via gulp",
   "main": "index.js",
   "author": "Nicolás Fantone <nfantone@gmail.com> (https://github.com/nfantone)",
