@@ -1,12 +1,13 @@
 language: node_js
 node_js:
-- '5'
 - '6'
+- '7'
 branches:
 only:
 - master
 - develop
 - /^v?(\d\.){2}\d$/
+- /^greenkeeper-.*$/
 cache:
   bundler: true
   directories:
@@ -23,4 +24,4 @@ deploy:
   on:
     tags: true
     repo: nfantone/gulp-release
-    node_js: '5'
+    node_js: '7'
