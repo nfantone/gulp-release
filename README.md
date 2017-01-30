@@ -1,4 +1,6 @@
 # <img src="https://www.dropbox.com/s/tbm0ulwypyfcppi/gulp-gitflow.png?raw=1" width="80" height="80"> gulp-release
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/nfantone/gulp-release.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/nfantone/gulp-release.svg?branch=develop)](https://travis-ci.org/nfantone/gulp-release)[![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg?style=flat-square)](https://github.com/Flet/semistandard)
 
 A [GulpJS](https://github.com/gulpjs) plugin that enables support for git-flow style releases. It requires the [gitflow command line tool](https://github.com/petervanderdoes/gitflow-avh) to be installed on your system.
