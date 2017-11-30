@@ -1,8 +1,5 @@
 {
-  "extends": [
-    "semistandard",
-    "xo-space"
-  ],
+  "extends": ["semistandard", "prettier"],
   "env": {
     "mocha": true
   },
@@ -12,7 +9,8 @@
     "space-before-function-paren": [2, "never"],
     "operator-linebreak": [2, "after"],
     "require-yield": 2,
-    "arrow-parens": [2, "always"],
-    "object-curly-spacing": ["error", "always"]
-  }
+    "object-curly-spacing": ["error", "always"],
+    "prettier/prettier": "error"
+  },
+  "plugins": ["prettier"]
 }
