@@ -1,5 +1,4 @@
 'use strict';
-
 const gulp = require('gulp');
 const release = require('gulp-release');
 const eslint = require('gulp-eslint');
@@ -12,7 +11,8 @@ const PATHS = {
 release.register(gulp);
 
 gulp.task('eslint', () =>
-  gulp.src(PATHS.src)
+  gulp
+    .src(PATHS.src)
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failAfterError())
