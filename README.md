@@ -1,7 +1,6 @@
 # <img src="https://www.dropbox.com/s/tbm0ulwypyfcppi/gulp-gitflow.png?raw=1" width="80" height="80"> gulp-release
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/nfantone/gulp-release.svg)](https://greenkeeper.io/)
-[![Build Status](https://travis-ci.org/nfantone/gulp-release.svg?branch=develop)](https://travis-ci.org/nfantone/gulp-release)[![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg?style=flat-square)](https://github.com/Flet/semistandard)
+[![Greenkeeper badge](https://badges.greenkeeper.io/nfantone/gulp-release.svg)](https://greenkeeper.io/) [![Build Status](https://travis-ci.org/nfantone/gulp-release.svg?branch=develop)](https://travis-ci.org/nfantone/gulp-release) [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg?style=flat-square)](https://github.com/Flet/semistandard) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 A [GulpJS](https://github.com/gulpjs) plugin that enables support for git-flow
 style releases. It requires the
@@ -33,8 +32,8 @@ npm i --save-dev gulp-release
 
 * gitflow `^1.9.0`
 * gulp `~3.9`
-* node `^4.0.0`
-* npm `^3.0.0`
+* node `^8.0.0`
+* npm `^5.0.0`
 
 ```sh
 # Add node repositories
