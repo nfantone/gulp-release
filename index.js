@@ -34,7 +34,7 @@ class GitflowRegistry {
   }
 
   init(taker) {
-    let release = new GitflowRelease(this.options);
+    const release = new GitflowRelease(this.options);
 
     taker.task('release:start', done =>
       release.start(argv.version, argv.type, done)
@@ -56,7 +56,7 @@ class GitflowRegistry {
           argv.codenames
         );
       }
-      let ver = semver.inc(release.version(), 'patch');
+      const ver = semver.inc(release.version(), 'patch');
       return release.bump(ver, null, argv.message);
     });
     taker.task('bump:next', () => {
