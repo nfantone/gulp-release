@@ -1,7 +1,7 @@
 {
   "name": "gulp-release",
-  "version": "1.1.2-dev",
-  "codename": "Alien Mindbenders",
+  "version": "1.2.0",
+  "codename": "Rubber Glue",
   "description": "Enable git-flow style releases via gulp",
   "main": "index.js",
   "author": "Nicolás Fantone <nfantone@gmail.com> (https://github.com/nfantone)",
