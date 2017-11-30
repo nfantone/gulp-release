@@ -6,8 +6,8 @@
   "main": "index.js",
   "author": "Nicolás Fantone <nfantone@gmail.com> (https://github.com/nfantone)",
   "scripts": {
-    "test": "gulp test",
-    "validate": "gulp validate"
+    "validate": "gulp validate",
+    "release": "gulp release"
   },
   "repository": {
     "type": "git",
