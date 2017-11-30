@@ -1,6 +1,6 @@
 {
   "name": "gulp-release",
-  "version": "1.2.0",
+  "version": "1.2.1-dev",
   "codename": "Rubber Glue",
   "description": "Enable git-flow style releases via gulp",
   "main": "index.js",
