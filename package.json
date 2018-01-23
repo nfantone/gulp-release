@@ -52,7 +52,7 @@
     "lodash": "^4.17.4",
     "run-sequence": "^2.2.0",
     "semver": "^5.4.1",
-    "yargs": "^10.0.3"
+    "yargs": "^11.0.0"
   },
   "devDependencies": {
     "eslint": "^4.12.1",
