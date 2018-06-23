@@ -55,7 +55,7 @@
     "yargs": "^11.0.0"
   },
   "devDependencies": {
-    "eslint": "^4.12.1",
+    "eslint": "^5.0.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-config-semistandard": "^11.0.0",
     "eslint-config-standard": "^10.2.1",
