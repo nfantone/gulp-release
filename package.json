@@ -46,7 +46,7 @@
     "gulp-codename": "^0.1.1",
     "gulp-git": "^2.4.2",
     "gulp-if": "^2.0.2",
-    "gulp-json-transform": "^0.4.5",
+    "gulp-json-transform": "0.4.5",
     "gulp-shell": "^0.6.3",
     "gulp-util": "^3.0.8",
     "lodash": "^4.17.4",
