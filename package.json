@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "fs-sync": "^1.0.4",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-bump": "^2.8.0",
     "gulp-codename": "^0.1.1",
     "gulp-git": "^2.4.2",
